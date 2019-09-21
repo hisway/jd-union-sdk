@@ -12,7 +12,7 @@ PHP =>7.0
 
 由于自己没有高级接口，所以高级权限和基础权限封装是分开成两部分的。
 
-没有获取高级权限的，可以申请Apith的高级接口：https://apith.cn/invite/4SO80R60 （用github登录即可 ，28元/月，收费的哦）
+没有获取高级权限的，可以申请Apith的高级接口：https://apith.cn/invite/92CCP19D （用github登录即可 ，28元/月，收费的哦）
 
 ### 使用示例
 
@@ -73,7 +73,7 @@ var_dump($result);
 ### 2.Apith版
 
 
-没有**Apith高级权限**的，可以点击 https://apith.cn/invite/4SO80R60 （用github登录即可 ，28元/月，收费的哦）。
+没有**Apith高级权限**的，可以点击 https://apith.cn/invite/92CCP19D （用github登录即可 ，28元/月，收费的哦）。
 
 | 接口名称 [**高级**]  **Apith版** | 对应方法  |
 | --------   | ---- |

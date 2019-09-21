@@ -1,10 +1,10 @@
 {
-  "name": "yumufeng/jd-union-sdk",
+  "name": "hisway/jd-union-sdk",
   "license": "MIT",
   "authors": [
     {
-      "name": "yumufeng",
-      "email": "admin@yumufeng.com"
+      "name": "hisway",
+      "email": "hisway@qq.com"
     }
   ],
   "require": {
@@ -15,12 +15,6 @@
     ],
     "psr-4": {
       "JdMediaSdk\\": "src"
-    }
-  },
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://packagist.laravel-china.org"
     }
   }
 }
