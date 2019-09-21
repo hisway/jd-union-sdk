@@ -155,4 +155,30 @@ class Apith extends JdGateWay
 
     }
 
+    /**
+     * @api 根据短链接查询落地页面
+     * @line https://doc.apith.cn/#/api/jdunion/getLinkByShort
+     * @param $short
+     * @return bool|string
+     * @throws \Exception
+     */
+    public function getLinkByShort($short)
+    {
+        $params['short'] = $short;
+        return $this->send('getLinkByShort', $params);
+    }
+
+    /**
+     * @api 根据短链接查询商品编号
+     * @line https://doc.apith.cn/#/api/jdunion/getSkuIdByShort
+     * @param $short
+     * @return bool|string
+     * @throws \Exception
+     */
+    public function getSkuIdByShort($short)
+    {
+        $params['short'] = $short;
+        return $this->send('getSkuIdByShort', $params);
+    }
+
 }
