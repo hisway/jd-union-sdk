@@ -22,7 +22,7 @@ $config = [
     'appSecret' => '', // 密钥
     'unionId' => '', // 联盟ID
     'positionId' => '', // 推广位ID
-    'siteId' => '' // 网站ID,
+    'siteId' => '', // 网站ID,
     'apithId' => '',  // 第三方网站Apith的appid （可选，不使用apith的，可以不用填写）
     'apithKey' => '', // 第三方网站Apith的appSecret (可选，不使用apith的，可以不用填写)
     'isCurl' => true // 设置为true的话，强制使用php的curl，为false的话，在swoole cli环境下自动启用 http协程客户端
@@ -53,8 +53,9 @@ var_dump($result);
 | jd.union.open.user.pid.get(获取PID)     | \$client->promotion->pid() |
 | jd.union.open.promotion.common.get(获取通用推广链接)     | \$client->link->get() |
 | jd.union.open.goods.jingfen.query (京粉精选商品查询接口)     | \$client->good->jingfen() |
-| (京东商品详情图片集合接口)     | \$client->good->detailImgLists() |
-| (京东主图图片集合接口)     | \$client->good->goodImgLists() |
+| 根据短链查询出落地页  | \$client->good->getLinkByShortUrl()   |
+| jd.union.open.statistics.giftcoupon.query(活动查询接口)   | \$client->activity->query()   |
+
 
 | 接口名称 [**高级**] **官方版**   | 对应方法  |
 | --------   | ---- |
@@ -65,9 +66,9 @@ var_dump($result);
 |jd.union.open.coupon.importation(优惠券导入【**申请**】)   | \$client->coupon->importation()   |
 |jd.union.open.position.query(查询推广位【**申请**】)   | \$client->promotion->queryPosition()   |
 |jd.union.open.goods.bigfield.query(大字段商品查询接口（内测版）【**申请**】)   | \$client->good->bigFieldQuery()   |
-|jd.union.open.goods.link.query(链接商品查询接口【**申请**】)   | \$client->good->linkQuery()   |
-
-
+|jd.union.open.coupon.gift.get(礼金创建【**申请**】)   | \$client->gift->get()   |
+|jd.union.open.coupon.gift.stop(礼金停止【**申请**】)   | \$client->gift->stop()   |
+|jd.union.open.statistics.giftcoupon.query(礼金停止【**申请**】)   | \$client->gift->query()   |
 
 
 ### 2.Apith版
@@ -84,12 +85,15 @@ var_dump($result);
 |jd.union.open.position.query(查询推广位【**申请**】)   | \$client->apith->queryPosition()   |
 |jd.union.open.position.create(创建推广位【**申请**】)   | \$client->apith->createPosition()   |
 |商品主图列表查询【**申请**】   | \$client->apith->getGoodsImageList()   |
-
-
+|根据短链查询出落地页【**申请**】   | \$client->apith->getLinkByShort()   |
+|根据短链接查询商品编号【**申请**】   | \$client->apith->getSkuIdByShort()   |
 
 ## License
 
-MIT
+Apache 
+
+
+
 
 
 
