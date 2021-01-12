@@ -71,6 +71,11 @@ class JdGateWay
         $this->jdFatory->setError($message);
         return false;
     }
+    protected function setCode($code)
+    {
+        $this->jdFatory->setCode($code);
+        return false;
+    }
 
     /**
      * 生成签名
@@ -200,6 +205,7 @@ class JdGateWay
                 return $decodeObject;
             }
             if ($decodeObject['code'] != 1) {
+                $this->setCode($decodeObject['code']);
                 $this->setError($decodeObject['msg']);
                 return false;
             }
@@ -214,6 +220,7 @@ class JdGateWay
             }
             $finally = json_decode($nowLists['result'], true);
             if ($finally['code'] != 200) {
+                $this->setCode($finally['code']);
                 return $this->setError($finally['message']);
             }
             if ($raw == true) {

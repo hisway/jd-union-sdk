@@ -8,8 +8,10 @@
 
 namespace JdMediaSdk;
 
+use JdMediaSdk\Api\Activity;
 use JdMediaSdk\Api\Apith;
 use JdMediaSdk\Api\Coupon;
+use JdMediaSdk\Api\Gift;
 use JdMediaSdk\Api\Good;
 use JdMediaSdk\Api\Link;
 use JdMediaSdk\Api\Promotion;
@@ -18,12 +20,15 @@ use JdMediaSdk\Api\Promotion;
  * @property Good good  查询商品API
  * @property Promotion promotion  PID&推广位API
  * @property Link link 获取推广链接API
+ * @property Gift gift 营销工具APi
+ * @property Activity activity 活动APi
  * @property Coupon coupon 优惠券API
  * @property Apith apith 高级权限APi
  */
 class JdFatory
 {
     private $config;
+    private $code;
     private $error;
 
     public function __construct($config = null)
@@ -50,16 +55,23 @@ class JdFatory
         }
     }
 
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    public function getCode()
+    {
+        return $this->code;
+    }
+
     public function setError($message)
     {
         $this->error = $message;
     }
 
-
     public function getError()
     {
         return $this->error;
     }
-
-
 }
