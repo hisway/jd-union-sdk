@@ -91,7 +91,6 @@ class Apith extends JdGateWay
     public function createPosition(array $spaceNameList, string $key, $unionType = 1, $type = 4)
     {
         $param = [
-            'debug' =>1,
             'unionId' => $this->unionId,
             'key' => $key,
             'unionType' => $unionType,
