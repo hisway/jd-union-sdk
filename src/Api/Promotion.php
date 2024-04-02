@@ -20,7 +20,6 @@ class Promotion extends JdGateWay
      * @return bool|string
      * @throws \Exception
      */
-
     public function order(array $params)
     {
         if (!isset($params['pageNo'])) {
@@ -36,6 +35,27 @@ class Promotion extends JdGateWay
         return $result;
     }
 
+    /**
+     * @api 订单行查询接口 （查询级别，分钟查询）
+     * @line https://union.jd.com/openplatform/api/v2?apiName=jd.union.open.order.row.query
+     * @param array $params
+     * @return array|bool|string
+     * @throws \Exception
+     */
+    public function orderRow(array $params)
+    {
+        if (!isset($params['pageIndex'])) {
+            $params['pageIndex'] = 1;
+        }
+        if (!isset($params['pageSize'])) {
+            $params['pageSize'] = 100;
+        }
+        $reqParams = [
+            'orderReq' => $params,
+        ];
+        $result = $this->send('jd.union.open.order.row.query', $reqParams, true);
+        return $result;
+    }
 
     /**
      * @api 获取PID
