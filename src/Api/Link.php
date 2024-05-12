@@ -32,6 +32,7 @@ class Link extends JdGateWay
         $reqParams = [
             'promotionCodeReq' => $params,
         ];
+        $reqParams['sceneId'] = $params['sceneId'] ?? 1;
         $result = $this->send('jd.union.open.promotion.common.get', $reqParams);
         return $result;
     }
@@ -59,6 +60,7 @@ class Link extends JdGateWay
         $reqParams = [
             'promotionCodeReq' => $params,
         ];
+        $reqParams['sceneId'] = $params['sceneId'] ?? 1;
         return $this->send('jd.union.open.promotion.byunionid.get', $reqParams);
     }
 }
